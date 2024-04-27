@@ -14,7 +14,7 @@ import java.util.List;
 public class DoctorController {
     @Autowired
     private DoctorService doctorService;
-
+    //Comentario de prueba - LD
     //Registrar doctor
     @PostMapping("/DoctorRegistration")
     public ResponseEntity<Doctor> Register(@RequestBody DoctorDto dDto){
