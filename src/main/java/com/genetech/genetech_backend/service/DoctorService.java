@@ -6,6 +6,8 @@ import com.genetech.genetech_backend.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 
 public class DoctorService {
@@ -18,4 +20,9 @@ public class DoctorService {
                 dDto.getBirth_date(), dDto.getNumber(), dDto.getAddress(), dDto.getCity(), dDto.getGender());
         return doctorRepository.save(doctor);
     }
+    //Listar doctores
+    public List<Doctor> listarDoctor(){
+        return doctorRepository.findAll();
+    }
+
 }
