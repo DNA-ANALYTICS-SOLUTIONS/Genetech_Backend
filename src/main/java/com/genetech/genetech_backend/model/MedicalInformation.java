@@ -26,6 +26,7 @@ public class MedicalInformation {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
+    //segundo commit para Brenda
     public MedicalInformation(LocalDate registration_date, String description, String allergies, String previous_surgeries, String vaccinations, String blood_type, Patient patient) {
         this.registration_date = registration_date;
         this.description = description;
