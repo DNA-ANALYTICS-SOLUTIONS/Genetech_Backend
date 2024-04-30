@@ -14,6 +14,7 @@ import java.util.List;
 public class AppointmentService implements AppointmentInterface {
     @Autowired
     private AppointmentRepository appointmentRepository;
+
     //US-01: Crear cita
     public Appointment Create (AppointmentDto apDto){
         Appointment appointment = new Appointment(apDto.getDoctor(), apDto.getReason(), apDto.getDate(), apDto.getTime(),
@@ -21,8 +22,13 @@ public class AppointmentService implements AppointmentInterface {
         return appointmentRepository.save(appointment);
     }
 
+
     @Override
-    public List<Appointment> list(){ return appointmentRepository.findAll();
+    public void delete(Long id) {appointmentRepository.deleteById(id);}
+
+    @Override
+    public void insert(Appointment appointment) {
+        appointmentRepository.save(appointment);
     }
 
 

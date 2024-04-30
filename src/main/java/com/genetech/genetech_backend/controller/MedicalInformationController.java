@@ -20,17 +20,17 @@ public class MedicalInformationController {
     private MedicalInformationService medicalInformationService;
 
     //Registrar Info Medica (US-11)
-    @PostMapping("/RegisterMedicalInformation")
+    @PostMapping("/Register Medical Information")
     public ResponseEntity<MedicalInformation> Register (MedicalInformationDto miDto){
         return new ResponseEntity<>(medicalInformationService.Register(miDto), HttpStatus.CREATED);
     }
-    @PutMapping("/MedicalInformation")
+    @PutMapping("/Modify Medical Information")
     public void modificar(@RequestBody MedicalInformationDto dto) {
         ModelMapper m = new ModelMapper();
         MedicalInformation mI = m.map(dto, MedicalInformation.class);
         medicalInformationService.insert(mI);
     }
-    @GetMapping("/List/MedicalInformation")
+    @GetMapping("/List Medical Information")
     public List<MedicalInformationDto> listar() {
         List<MedicalInformation> medicalinformations = medicalInformationService.list();
         return medicalinformations.stream().map(x -> {
@@ -39,7 +39,7 @@ public class MedicalInformationController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping("/MedicalInformation/{id}")
+    @DeleteMapping("/Delete Medical Information/{id}")
     public void eliminar(@PathVariable("id") Long id) {
         medicalInformationService.delete(id);
     }

@@ -9,5 +9,5 @@ List<MedicalInformation>list();
 
     void delete(Long id);
 
-    void insert(MedicalInformation mI);
+    void insert(MedicalInformation mi);
 }
