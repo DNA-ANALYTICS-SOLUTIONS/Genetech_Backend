@@ -29,6 +29,7 @@ public class DoctorController {
     public ResponseEntity<Doctor> Register(@RequestBody DoctorDto dDto){
         return new ResponseEntity<>(doctorService.Register(dDto), HttpStatus.CREATED);
     }
+
     //HU-08
     @GetMapping("/patient/List Doctor")
     public List<DoctorDto> listar() {

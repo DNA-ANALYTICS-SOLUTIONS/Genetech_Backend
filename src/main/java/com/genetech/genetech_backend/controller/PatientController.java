@@ -8,6 +8,7 @@ import com.genetech.genetech_backend.model.MedicalInformation;
 import com.genetech.genetech_backend.model.Patient;
 import com.genetech.genetech_backend.service.PatientService;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 public class PatientController {
+    @Autowired
     private PatientService patientService;
 
     //HU05

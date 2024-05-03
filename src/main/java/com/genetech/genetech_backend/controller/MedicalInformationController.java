@@ -21,7 +21,7 @@ public class MedicalInformationController {
 
     //HU11
     @PostMapping("/patient/Register Medical Information")
-    public ResponseEntity<MedicalInformation> Register (MedicalInformationDto miDto){
+    public ResponseEntity<MedicalInformation> Register (@RequestBody MedicalInformationDto miDto){
         return new ResponseEntity<>(medicalInformationService.Register(miDto), HttpStatus.CREATED);
     }
     //HU17
@@ -31,7 +31,7 @@ public class MedicalInformationController {
         MedicalInformation mI = m.map(dto, MedicalInformation.class);
         medicalInformationService.insert(mI);
     }
-    //HU10 $$$$$$$$ (pacientes por atender)
+    //HU10 $$$$$$$$ (pacientes por atender)  PENDIENTE MOVER
     @GetMapping("/doctor/List Medical Information")
     public List<MedicalInformationDto> listar() {
         List<MedicalInformation> medicalinformations = medicalInformationService.list();
