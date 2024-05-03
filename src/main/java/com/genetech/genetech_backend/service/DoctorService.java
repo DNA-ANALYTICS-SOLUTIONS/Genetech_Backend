@@ -47,4 +47,6 @@ public class DoctorService implements DoctorInterface {
         return doctorRepository.findBySpeciality(especialidad);
     }
 
+
+
 }

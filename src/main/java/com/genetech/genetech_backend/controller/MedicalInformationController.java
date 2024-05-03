@@ -21,7 +21,7 @@ public class MedicalInformationController {
 
     //Registrar Info Medica (US-11)
     @PostMapping("/Register Medical Information")
-    public ResponseEntity<MedicalInformation> Register (MedicalInformationDto miDto){
+    public ResponseEntity<MedicalInformation> Register (@RequestBody MedicalInformationDto miDto){
         return new ResponseEntity<>(medicalInformationService.Register(miDto), HttpStatus.CREATED);
     }
     @PutMapping("/Modify Medical Information")
