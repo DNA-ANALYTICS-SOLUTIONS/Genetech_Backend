@@ -8,5 +8,4 @@ import java.util.List;
 public interface AppointmentInterface {
    void delete(Long id);
    void insert(Appointment appointment);
-
 }

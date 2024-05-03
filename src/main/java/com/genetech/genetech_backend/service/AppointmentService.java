@@ -31,5 +31,5 @@ public class AppointmentService implements AppointmentInterface {
         appointmentRepository.save(appointment);
     }
 
-
+    
 }
