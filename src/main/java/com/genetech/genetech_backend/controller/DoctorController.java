@@ -25,7 +25,7 @@ public class DoctorController {
     private DoctorService doctorService;
 
     //HU-07
-    @PostMapping("/Doctor Registration")
+    @PostMapping("/doctor/Doctor Registration")
     public ResponseEntity<Doctor> Register(@RequestBody DoctorDto dDto){
         return new ResponseEntity<>(doctorService.Register(dDto), HttpStatus.CREATED);
     }

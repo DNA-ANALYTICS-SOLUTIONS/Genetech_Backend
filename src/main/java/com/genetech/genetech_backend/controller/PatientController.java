@@ -20,7 +20,7 @@ public class PatientController {
     private PatientService patientService;
 
     //HU05
-    @PostMapping("/Register Patient")
+    @PostMapping("/patient/Register Patient")
     public ResponseEntity<Patient> Register(@RequestBody PatientDto pDto){
         return new ResponseEntity<>(patientService.Register(pDto), HttpStatus.CREATED);
     }
