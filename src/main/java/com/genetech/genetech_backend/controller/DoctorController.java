@@ -24,13 +24,13 @@ public class DoctorController {
     @Autowired
     private DoctorService doctorService;
 
-    //Registrar doctor
+    //HU-07
     @PostMapping("/Doctor Registration")
     public ResponseEntity<Doctor> Register(@RequestBody DoctorDto dDto){
         return new ResponseEntity<>(doctorService.Register(dDto), HttpStatus.CREATED);
     }
-
-    @GetMapping("/List Doctor")
+    //HU-08
+    @GetMapping("/patient/List Doctor")
     public List<DoctorDto> listar() {
         List<Doctor> doctor = doctorService.list();
         return doctor.stream().map(x -> {
@@ -39,15 +39,15 @@ public class DoctorController {
         }).collect(Collectors.toList());
     }
 
-
-    @PutMapping("/Modify Doctor")
+    //HU16
+    @PutMapping("/doctor/Modify Doctor")
     public void modificar(@RequestBody DoctorDto dto) {
         ModelMapper m = new ModelMapper();
         Doctor doctor = m.map(dto, Doctor.class);
         doctorService.insert(doctor);
     }
 
-    @GetMapping("/List Appointment Doctor")
+    @GetMapping("/doctor/List Appointment Doctor")
     public List<AppointmentDto> listAppointment()  {
         List<Appointment> appointments = doctorService.listAppointment();
         return appointments.stream().map(x -> {
@@ -56,7 +56,8 @@ public class DoctorController {
         }).collect(Collectors.toList());
     }
 
-    @PostMapping("/Search Doctor by Speciality")
+    //HU13 QUERY
+    @PostMapping("/patient/Search Doctor by Speciality")
     public List<DoctorDto> buscar(@RequestBody String especialidad) {
         return doctorService.BuscarDoctoresporEspecialidad(especialidad).stream().map(x -> {
             ModelMapper m = new ModelMapper();

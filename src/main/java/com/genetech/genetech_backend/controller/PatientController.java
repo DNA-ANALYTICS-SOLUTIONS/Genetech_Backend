@@ -19,20 +19,20 @@ import java.util.stream.Collectors;
 public class PatientController {
     private PatientService patientService;
 
-    //Registrar paciente
+    //HU05
     @PostMapping("/Register Patient")
     public ResponseEntity<Patient> Register(@RequestBody PatientDto pDto){
         return new ResponseEntity<>(patientService.Register(pDto), HttpStatus.CREATED);
     }
-
-    @PutMapping("/Modify Patient")
+    //HU09
+    @PutMapping("/patient/Modify Patient")
     public void modificar(@RequestBody PatientDto dto) {
         ModelMapper m = new ModelMapper();
         Patient patient = m.map(dto, Patient.class);
         patientService.insert(patient);
     }
-
-    @GetMapping("/List Appointment Patient")
+    //HU18
+    @GetMapping("/patient/List Appointment Patient")
     public List<AppointmentDto> listAppointment()  {
         List<Appointment> appointments = patientService.list();
         return appointments.stream().map(x -> {

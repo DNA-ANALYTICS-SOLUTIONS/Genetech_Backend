@@ -19,23 +19,21 @@ public class AppointmentController {
     @Autowired
     private AppointmentService appointmentService;
 
-    //US-01: Crear cita
-    @PostMapping("/Create Appointment")
+    //HU-01: Crear cita
+    @PostMapping("/patient/Create Appointment")
     public ResponseEntity<Appointment> Create (@RequestBody AppointmentDto aDto){
         return new ResponseEntity<>(appointmentService.Create(aDto), HttpStatus.CREATED);
     }
-
-    @DeleteMapping("/Delete Appointment/{id}")
+    //HU-03
+    @DeleteMapping("/patient/Delete Appointment/{id}")
     public void eliminar(@PathVariable("id") Long id) {
         appointmentService.delete(id);
     }
-
-    @PutMapping("/Modify Appointment")
+    //HU-04
+    @PutMapping("/patient/Modify Appointment")
     public void modificar(@RequestBody AppointmentDto dto) {
         ModelMapper m = new ModelMapper();
         Appointment ap = m.map(dto, Appointment.class);
         appointmentService.insert(ap);
     }
-
-
 }

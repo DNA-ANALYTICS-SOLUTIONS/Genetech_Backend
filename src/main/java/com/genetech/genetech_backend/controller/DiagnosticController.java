@@ -22,13 +22,13 @@ public class DiagnosticController {
     @Autowired
     private DiagnosticService diagnosticService;
 
-    //Regitrar Diagnóstico (US-14)
-    @PostMapping("/Register Diagnostic")
+    //Regitrar Diagnóstico (HU14)
+    @PostMapping("/doctor/Register Diagnostic")
     public ResponseEntity<Diagnostic> Register(@RequestBody DiagnosticDto diDto){
         return new ResponseEntity<>(diagnosticService.Register(diDto), HttpStatus.CREATED);
     }
-
-    @GetMapping("/List Diagnostic")
+    //HU06 $$$$$$$ (agregar por id)
+    @GetMapping("/patient/List Diagnostic")
     public List<DiagnosticDto> listar() {
         List<Diagnostic> diagnostic = diagnosticService.list();
         return diagnostic.stream().map(x -> {
