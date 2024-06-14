@@ -63,6 +63,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/authenticate").permitAll()
                         .requestMatchers("/user/register").permitAll()
+                        .requestMatchers("/user/role").permitAll()
                         .requestMatchers("/doctor/**").hasAuthority("DOCTOR")
                         .requestMatchers("/patient/**").hasAuthority("PATIENT")
                         .anyRequest().authenticated()

@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface IUserRepository extends JpaRepository<User, Long> {
-    public User findByUsername(String username);
+    public User findByUsername(String username); //encontrar usuario por username
 
     //BUSCAR POR NOMBRE
     @Query("select count(u.username) from User u where u.username =:username")

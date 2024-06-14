@@ -5,7 +5,7 @@ import com.genetech.genetech_backend.model.User;
 public class RoleDTO {
     private Long id;
     private String rol;
-    private User user;
+    private String username;
 
     public Long getId() {
         return id;
@@ -23,11 +23,11 @@ public class RoleDTO {
         this.rol = rol;
     }
 
-    public User getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
