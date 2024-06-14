@@ -12,14 +12,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private IUserService uS;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @PostMapping
+    @PostMapping("/register")
     public void registrar(@RequestBody UserDTO dto) {
         ModelMapper m = new ModelMapper();
         User u = m.map(dto, User.class);

@@ -62,6 +62,7 @@ public class WebSecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/authenticate").permitAll()
+                        .requestMatchers("/user/register").permitAll()
                         .requestMatchers("/doctor/**").hasAuthority("DOCTOR")
                         .requestMatchers("/patient/**").hasAuthority("PATIENT")
                         .anyRequest().authenticated()
