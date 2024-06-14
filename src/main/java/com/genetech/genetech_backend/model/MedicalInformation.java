@@ -24,9 +24,9 @@ public class MedicalInformation {
 
     @OneToOne
     @JoinColumn(name = "patient_id")
-    private Patient patient;
+    private User patient;
 
-    public MedicalInformation(LocalDate registration_date, String description, String allergies, String previous_surgeries, String vaccinations, String blood_type, Patient patient) {
+    public MedicalInformation(LocalDate registration_date, String description, String allergies, String previous_surgeries, String vaccinations, String blood_type, User patient) {
         this.registration_date = registration_date;
         this.description = description;
         this.allergies = allergies;

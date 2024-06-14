@@ -17,18 +17,18 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "doctor_id")
-    private Doctor doctor;
+    @JoinColumn(name = "doctor_id", nullable = false)
+    private User doctor;
 
     private String reason;
     private LocalDate date;
     private LocalTime time;
 
     @ManyToOne
-    @JoinColumn(name = "patient_id")
-    private Patient patient;
+    @JoinColumn(name = "patient_id", nullable = false)
+    private User patient;
 
-    public Appointment(Doctor doctor, String reason, LocalDate date, LocalTime time, Patient patient) {
+    public Appointment(User doctor, String reason, LocalDate date, LocalTime time, User patient) {
         this.doctor = doctor;
         this.reason = reason;
         this.date = date;

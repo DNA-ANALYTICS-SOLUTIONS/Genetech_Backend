@@ -1,11 +1,9 @@
 package com.genetech.genetech_backend.dto;
 
-import com.genetech.genetech_backend.model.Doctor;
-import com.genetech.genetech_backend.model.Patient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import com.genetech.genetech_backend.model.User;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -14,9 +12,9 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class AppointmentDto {
     private Long id;
-    private Doctor doctor;
+    private User doctor;
     private String reason;
     private LocalDate date;
     private LocalTime time;
-    private Patient patient;
+    private User patient;
 }

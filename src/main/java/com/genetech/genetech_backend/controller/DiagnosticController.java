@@ -1,9 +1,7 @@
 package com.genetech.genetech_backend.controller;
 
 import com.genetech.genetech_backend.dto.DiagnosticDto;
-import com.genetech.genetech_backend.dto.DoctorDto;
 import com.genetech.genetech_backend.model.Diagnostic;
-import com.genetech.genetech_backend.model.Doctor;
 import com.genetech.genetech_backend.service.DiagnosticService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
