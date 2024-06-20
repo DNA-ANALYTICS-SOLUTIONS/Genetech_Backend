@@ -1,14 +1,10 @@
 package com.genetech.genetech_backend.service;
-
-
 import com.genetech.genetech_backend.Interfaces.AppointmentInterface;
 import com.genetech.genetech_backend.dto.AppointmentDto;
 import com.genetech.genetech_backend.model.Appointment;
 import com.genetech.genetech_backend.repository.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class AppointmentService implements AppointmentInterface {
@@ -31,5 +27,7 @@ public class AppointmentService implements AppointmentInterface {
         appointmentRepository.save(appointment);
     }
 
-    
+
+
+
 }

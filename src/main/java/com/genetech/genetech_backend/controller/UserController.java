@@ -28,6 +28,15 @@ public class UserController {
         uS.insert(u);
     }
 
+//listar doctores por especialidad
+    @GetMapping("/speciality/{speciality}")
+    public List<UserDTO> listarDoctoresPorEspecialidad(@PathVariable("speciality") String speciality) {
+        return uS.getDoctorsBySpeciality(speciality).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, UserDTO.class);
+        }).collect(Collectors.toList());
+    }
+
     @PutMapping
     public void modificar(@RequestBody UserDTO dto) {
         ModelMapper m = new ModelMapper();
@@ -47,6 +56,7 @@ public class UserController {
         return dto;
     }
 
+    //listar doctores
     @GetMapping
     public List<UserDTO> listar() {
         return uS.list().stream().map(x -> {
@@ -54,5 +64,6 @@ public class UserController {
             return m.map(x, UserDTO.class);
         }).collect(Collectors.toList());
     }
+
 
 }

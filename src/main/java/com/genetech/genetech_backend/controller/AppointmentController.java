@@ -2,6 +2,7 @@ package com.genetech.genetech_backend.controller;
 
 import com.genetech.genetech_backend.dto.AppointmentDto;
 import com.genetech.genetech_backend.dto.MedicalInformationDto;
+import com.genetech.genetech_backend.dto.UserDTO;
 import com.genetech.genetech_backend.model.Appointment;
 import com.genetech.genetech_backend.model.MedicalInformation;
 import com.genetech.genetech_backend.service.AppointmentService;
@@ -36,4 +37,5 @@ public class AppointmentController {
         Appointment ap = m.map(dto, Appointment.class);
         appointmentService.insert(ap);
     }
+
 }

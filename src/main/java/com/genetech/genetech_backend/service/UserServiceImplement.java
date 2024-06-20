@@ -18,6 +18,11 @@ public class UserServiceImplement implements IUserService {
         uR.save(usuario);
     }
 
+
+    @Override
+    public List<User> getDoctorsBySpeciality(String speciality) {
+        return uR.findDoctorsBySpeciality(speciality);
+    }
     @Override
     public List<User> list() {
         return uR.findAll();
@@ -32,4 +37,11 @@ public class UserServiceImplement implements IUserService {
     public User listarId(Long idUsuario) {
         return uR.findById(idUsuario).orElse(new User());
     }
+
+    @Override
+    public List<User> findDoctors() {
+        return uR.findDoctors();
+    }
+
+
 }
