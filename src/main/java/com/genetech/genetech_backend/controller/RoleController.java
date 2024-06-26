@@ -7,12 +7,15 @@ import com.genetech.genetech_backend.model.User;
 import com.genetech.genetech_backend.repository.IUserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
-
+@CrossOrigin
 @RestController
+@RequestMapping("/todo")
 public class RoleController {
     @Autowired
     private IRoleService rS;
@@ -20,7 +23,7 @@ public class RoleController {
     @Autowired
     private IUserRepository userRepository;
 
-    @PostMapping("/user/role")
+    @PostMapping("/registera")
     public void registrar(@RequestBody RoleDTO dto) {
         User user = userRepository.findByUsername(dto.getUsername());
         if(user != null){
@@ -32,7 +35,11 @@ public class RoleController {
             throw new RuntimeException("Usuario no encontrado");
         }
     }
-
+    @GetMapping("/buscar/{userN}")
+    public long buscar(@PathVariable("userN") String userN) {
+        Long useras = userRepository.findUserIdByUsername(userN);
+        return useras;
+    }
     @PutMapping
     public void modificar(@RequestBody RoleDTO dto) {
         Role existingRole = rS.listarId(dto.getId());

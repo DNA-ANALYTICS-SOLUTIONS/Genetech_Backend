@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -64,6 +64,5 @@ public class UserController {
             return m.map(x, UserDTO.class);
         }).collect(Collectors.toList());
     }
-
 
 }

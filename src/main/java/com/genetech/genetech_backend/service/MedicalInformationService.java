@@ -15,13 +15,26 @@ public class MedicalInformationService implements MedicalInformationInterface {
     private MedicalInformationRepository medicalInformationRepository;
 
     //Regitrar Información médica (US-11)
+
+    public void Register (MedicalInformation medicalInformation) {
+        medicalInformationRepository.save(medicalInformation);
+    }
+/*
+    @Override
+    public void insert(Role rol) {
+        rR.save(rol);
+    }
+
+
     public MedicalInformation Register (MedicalInformationDto miDto) {
+
         MedicalInformation medicalInformation = new MedicalInformation(miDto.getRegistration_date(), miDto.getDescription(),
                 miDto.getAllergies(), miDto.getPrevious_surgeries(), miDto.getVaccinations(), miDto.getBlood_type(),
                 miDto.getPatient()); //Ver si se puede cambiar a que solo reciba el ID
         return medicalInformationRepository.save(medicalInformation);
     }
 
+ */
     @Override
     public List<MedicalInformation> list(){ return medicalInformationRepository.findAll();
     }

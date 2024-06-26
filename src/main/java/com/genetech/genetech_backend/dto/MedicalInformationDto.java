@@ -17,6 +17,6 @@ public class MedicalInformationDto {
     private String previous_surgeries;
     private String vaccinations;
     private String blood_type;
-    private User patient;
+    private String patient;
 
 }

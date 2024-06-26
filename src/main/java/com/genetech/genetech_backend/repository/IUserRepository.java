@@ -19,11 +19,12 @@ public interface IUserRepository extends JpaRepository<User, Long> {
 
 
     //BUSCAR POR NOMBRE
-    @Query("select count(u.username) from User u where u.username =:username")
-    public int buscarUsername(@Param("username") String nombre);
+    @Query("select  u from User u where u.username = :username")
+    public User buscarUsername(@Param("username") String username);
 
     //Listar Doctores
-
+    @Query("select u.id from User u where u.username = :username")
+    public long findUserIdByUsername(@Param("username") String username);
 
     //INSERTAR ROLES
     @Transactional

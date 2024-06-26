@@ -43,5 +43,7 @@ public class UserServiceImplement implements IUserService {
         return uR.findDoctors();
     }
 
-
+    public User buscarNombre(String name) {
+        return uR.buscarUsername(name);
+    }
 }

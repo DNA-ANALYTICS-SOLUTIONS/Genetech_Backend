@@ -18,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
@@ -25,6 +26,7 @@ import static org.springframework.security.web.util.matcher.AntPathRequestMatche
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
+
 public class WebSecurityConfig {
 
     @Autowired
@@ -63,7 +65,10 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/authenticate").permitAll()
                         .requestMatchers("/user/register").permitAll()
-                        .requestMatchers("/user/role").permitAll()
+                        .requestMatchers("/todo/registera").permitAll()
+                        .requestMatchers("/todo/buscar/{userN}").permitAll()
+                        .requestMatchers("/medical/registra").permitAll()
+                        .requestMatchers("/todo//role/{id}").permitAll()
                         .requestMatchers("/doctor/**").hasAuthority("DOCTOR")
                         .requestMatchers("/patient/**").hasAuthority("PATIENT")
                         .anyRequest().authenticated()
