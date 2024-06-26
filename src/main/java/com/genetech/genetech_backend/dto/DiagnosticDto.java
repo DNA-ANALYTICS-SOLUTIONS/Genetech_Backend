@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 public class DiagnosticDto {
     private Long id;
     private String description;
-    private Appointment appointment;
+    private String appointment;
 
 }

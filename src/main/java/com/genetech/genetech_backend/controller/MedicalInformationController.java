@@ -66,7 +66,7 @@ public class MedicalInformationController {
         medicalInformationService.insert(mI);
     }
     //HU10 $$$$$$$$ (pacientes por atender)  PENDIENTE MOVER
-    @GetMapping("/doctor/List Medical Information")
+    @GetMapping("/lismedi")
     public List<MedicalInformationDto> listar() {
         List<MedicalInformation> medicalinformations = medicalInformationService.list();
         return medicalinformations.stream().map(x -> {

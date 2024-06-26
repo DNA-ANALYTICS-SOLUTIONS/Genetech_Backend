@@ -26,6 +26,7 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     @Query("select u.id from User u where u.username = :username")
     public long findUserIdByUsername(@Param("username") String username);
 
+    public User findByFullname(String fullname);
     //INSERTAR ROLES
     @Transactional
     @Modifying

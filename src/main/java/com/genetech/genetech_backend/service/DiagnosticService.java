@@ -2,6 +2,7 @@ package com.genetech.genetech_backend.service;
 
 import com.genetech.genetech_backend.Interfaces.DiagnosticInterface;
 import com.genetech.genetech_backend.dto.DiagnosticDto;
+import com.genetech.genetech_backend.model.Appointment;
 import com.genetech.genetech_backend.model.Diagnostic;
 import com.genetech.genetech_backend.repository.DiagnosticRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,16 @@ public class DiagnosticService implements DiagnosticInterface {
     private DiagnosticRepository diagnosticRepository;
 
     //Regitrar Diagnóstico(US-14)
+    /*
     public Diagnostic Register(DiagnosticDto diDto){
         Diagnostic diagnostic = new Diagnostic(diDto.getDescription(), diDto.getAppointment());
         return diagnosticRepository.save(diagnostic);
     }
+*/
+    public void Create2 (Diagnostic ap){
 
+        diagnosticRepository.save(ap);
+    }
     @Override
     public List<Diagnostic> list() {
         return diagnosticRepository.findAll();
